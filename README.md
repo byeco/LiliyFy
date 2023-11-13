@@ -1,2 +1,2 @@
 # LiliyFy
-LiliyFy Botu
+LiliyFy botu Bora Yiğit Elik tarafından yapılmıştır.
