@@ -10,30 +10,30 @@ const client = new Client({
 
 
 
-
+// github(byeco) tarafından yapılmıştır
 const token = 'MTA1Mjk4OTQ3NzY0MTAwNzExNA.G9J35A.4B3sGslq1v0TgCiMGMQne9MZi4CQuJG9tnCjKY';
-
+// github(byeco) tarafından yapılmıştır
 client.commands = new Collection();
-
+// github(byeco) tarafından yapılmıştır
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
   client.commands.set(command.data.name, command);
 }
-
+// github(byeco) tarafından yapılmıştır
 client.once('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+  console.log(`Logged in as ${client.user.tag}! iyi kullanımlar Github(byeco) - Nostge`);
   
   const commandData = client.commands.map(command => command.data);
   client.application.commands.set(commandData);
   
   setInterval(() => {
-    const statusOptions = ['💫 LiliyFy', 'Dostum Bu yetkide olmak çok güzel', 'WoW Bu sunucu harika!']; // Değiştirmek istediğiniz durumları buraya ekleyin
+    const statusOptions = ['💫 LiliyFy', 'Dostum Bu yetkide olmak çok güzel', 'WoW Bu sunucu harika!','By byeco - nostge']; // Değiştirmek istediğiniz durumları buraya ekleyin
     const randomStatus = statusOptions[Math.floor(Math.random() * statusOptions.length)];
     client.user.setActivity(randomStatus, { type: 'COMPETING' });
   }, 5000); // Her 5 saniyede bir durumu değiştir
 });
-
+// github(byeco) tarafından yapılmıştır
 client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
   
@@ -48,7 +48,7 @@ client.on('interactionCreate', async interaction => {
       await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
     }
 });
-
+// github(byeco) tarafından yapılmıştır
 // JSON dosyasını okuma fonksiyonu
 function okuVeriler() {
   try {
@@ -60,7 +60,7 @@ function okuVeriler() {
   }
 }
 
-
+// github(byeco) tarafından yapılmıştır
 client.on('guildMemberAdd', (member) => {
   const veriler = okuVeriler();
   const sunucuVerisi = veriler.sunucular[member.guild.id];
@@ -88,7 +88,7 @@ client.on('guildMemberAdd', (member) => {
       }
   }
 });
-
+// github(byeco) tarafından yapılmıştır
 client.on('guildMemberRemove', (member) => {
   const veriler = okuVeriler();
   const sunucuVerisi = veriler.sunucular[member.guild.id];
@@ -115,7 +115,7 @@ client.on('guildMemberRemove', (member) => {
       }
   }
 });
-
+// github(byeco) tarafından yapılmıştır
 function okuLogVerileri() {
   try {
       const veri = fs.readFileSync('./Data/log.json');
@@ -125,7 +125,7 @@ function okuLogVerileri() {
       return {};
   }
 }
-
+// github(byeco) tarafından yapılmıştır
 // İlgili olayları dinlemek için gerekli kodlar
 client.on('messageDelete', async (message) => {
   const logVerileri = okuLogVerileri();
@@ -145,7 +145,7 @@ client.on('messageDelete', async (message) => {
       }
   }
 });
-
+// github(byeco) tarafından yapılmıştır
 // Rol işlemleri loglama
 client.on('roleCreate', async (role) => {
   const logVerileri = okuLogVerileri();
@@ -165,7 +165,7 @@ client.on('roleCreate', async (role) => {
       }
   }
 });
-
+// github(byeco) tarafından yapılmıştır
 client.on('roleUpdate', async (oldRole, newRole) => {
   const logVerileri = okuLogVerileri();
   const sunucuID = oldRole.guild.id;
@@ -184,7 +184,7 @@ client.on('roleUpdate', async (oldRole, newRole) => {
       }
   }
 });
-
+// github(byeco) tarafından yapılmıştır
 client.on('roleDelete', async (role) => {
   const logVerileri = okuLogVerileri();
   const sunucuID = role.guild.id;
@@ -203,7 +203,7 @@ client.on('roleDelete', async (role) => {
       }
   }
 });
-
+// github(byeco) tarafından yapılmıştır
 // Üye-Rol işlemleri loglama
 client.on('guildMemberUpdate', async (oldMember, newMember) => {
   const logVerileri = okuLogVerileri();
@@ -245,7 +245,7 @@ client.on('guildMemberUpdate', async (oldMember, newMember) => {
       }
   }
 });
-
+// github(byeco) tarafından yapılmıştır
 // Kanal işlemleri loglama
 client.on('channelCreate', async (channel) => {
   const logVerileri = okuLogVerileri();
@@ -265,7 +265,7 @@ client.on('channelCreate', async (channel) => {
       }
   }
 });
-
+// github(byeco) tarafından yapılmıştır
 client.on('channelUpdate', async (oldChannel, newChannel) => {
   const logVerileri = okuLogVerileri();
   const sunucuID = newChannel.guild.id;
@@ -284,7 +284,7 @@ client.on('channelUpdate', async (oldChannel, newChannel) => {
       }
   }
 });
-
+// github(byeco) tarafından yapılmıştır
 client.on('channelDelete', async (channel) => {
   const logVerileri = okuLogVerileri();
   const sunucuID = channel.guild.id;
@@ -306,3 +306,5 @@ client.on('channelDelete', async (channel) => {
 
 
 client.login(token);
+
+// github(byeco) tarafından yapılmıştır

@@ -1,2 +1,2 @@
 # LiliyFy
-LiliyFy botu Bora Yiğit Elik tarafından yapılmıştır.
+LiliyFy botu github(byeco) tarafından yapılmıştır.
