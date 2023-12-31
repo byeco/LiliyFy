@@ -11,7 +11,7 @@ const client = new Client({
 
 
 // github(byeco) tarafından yapılmıştır
-const token = 'MTA1Mjk4OTQ3NzY0MTAwNzExNA.G9J35A.4B3sGslq1v0TgCiMGMQne9MZi4CQuJG9tnCjKY';
+const token = 'Token';
 // github(byeco) tarafından yapılmıştır
 client.commands = new Collection();
 // github(byeco) tarafından yapılmıştır
